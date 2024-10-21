@@ -1,0 +1,11 @@
+{
+  "suggest.noselect": false,
+  "suggest.autoTrigger": "always",
+  "suggest.minTriggerInputLength": 1,
+  "suggest.enablePreselect": true,
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.hoverTarget": "float",
+  "coc.preferences.extensionUpdateCheck": "daily"
+
+}
+
