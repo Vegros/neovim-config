@@ -5,6 +5,7 @@ This document outlines the configuration setup for Neovim using lua and LazyVim 
 ## Installation Steps
 
 ### Install ctags
+This is needed for tagbar plugin for better code navigation
 
 #### For macos 
 ```bash 
@@ -19,14 +20,22 @@ This document outlines the configuration setup for Neovim using lua and LazyVim 
    sudo apt install ctags
 ```
 #### For windows 
+Download ctags [here](https://github.com/universal-ctags/ctags-win32/releases)
 
-Download clang [here](https://github.com/universal-ctags/ctags-win32/releases)
+### Esure you have gcc installed 
+This is needed for the syntax highliting plugin
 
+#### For windows 
+Download gcc [here](https://sourceforge.net/projects/mingw/)
 
+#### Check for gcc in your system 
+```bash
+   gcc --version
+```
 
 ### Install ripgrep
 
-To enhance your search capabilities in Neovim, you can install ***ripgrep****. Below are the installation instructions for different operating systems:
+To enhance your search capabilities in Neovim, you can install ***ripgrep*** Below are the installation instructions for different operating systems:
 #### For macOS
 
 You can install ripgrep using Homebrew. Run the following command in your terminal:
