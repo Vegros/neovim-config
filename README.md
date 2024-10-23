@@ -1,15 +1,28 @@
 # Neovim Configuration
 
-This document outlines the configuration setup for Neovim using Vim-Plug as the plugin manager. It includes plugins for file management, code completion, themes, and additional functionality to enhance your coding experience.
+This document outlines the configuration setup for Neovim using lua and LazyVim as the plugin manager. It includes plugins for file management, code completion, themes, and additional functionality to enhance your coding experience.
 
 ## Installation Steps
 
-1. **Install Plugins**:
-   Open Neovim and run the command:
+### Install ctags
 
-```vim
-   :PlugInstall
+#### For macos 
+```bash 
+   brew install ctags
 ```
+#### For arch 
+```bash 
+   pacman -S ctags
+```
+#### For ubuntu 
+```bash 
+   sudo apt install ctags
+```
+#### For windows 
+
+Download clang [here](https://github.com/universal-ctags/ctags-win32/releases)
+
+
 
 ### Install ripgrep
 
@@ -70,16 +83,30 @@ You can install ripgrep using the package manager for your distribution. Here ar
 
 - Visit the [node.js installation page](https://nodejs.org/en/download/package-manager)
 
+### Install/Update/Verify Plugins
+   Open Neovim and run the command:
+
+```vim
+   :Lazy
+```
+
+### Configure LSP,Formatter,Linter
+   Open Neovim and run the command:
+
+```vim
+   :Mason
+```
+
 ### Additional Extensions 
 
-To enhance code completion for Python and TypeScript, you can install the following extensions: 
-
-- **coc-pyright**: A Language Server for Python. 
-- **coc-tsserver**: A Language Server for TypeScript and JavaScript. 
+To enhance syntax highliting for Python or any programming language, you can install the following: 
+ 
 #### Installation 
 
-1. Open Neovim: ```bash nvim```
-2. type the command `:CocInstall coc-pyright coc-tsserver`
+1. Open Neovim: `nvim`
+2. type the command `:TSInstall all`
+3. Verify Installation with `:TSInstallInfo`
+
 
 
 ### Download Fira Code:
@@ -107,7 +134,15 @@ Here are the new commands added to your Neovim configuration:
 
 - **`Ctrl + t`**: Opens a new terminal window.
 
+- **`Ctrl + m`**: Opens a floating terminal window.
+
 - **`Ctrl + n`**: Toggles the file directory (NvimTree).
+
+- **`a`**: Creates a new file (NvimTree).
+
+- **`r`**: rename file (NvimTree).
+
+- **`d`**: deletes file (NvimTree).
 
 - **`gcc`**: Toggles comments on selected code.
 
@@ -117,9 +152,15 @@ Here are the new commands added to your Neovim configuration:
 
 - **`<leader>fg`**: Executes a live grep search.
 
-- **`<leader>fs`**: Searches for the string under the cursor.
 
-- **`:`**: Opens a floating command input.
+To use the feature below please uncomment the line of code below!
+
+```lua 
+   vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true, silent = true })
+
+```  
+
+- **`:`**: Opens a floating command input. 
 
 
-## Additional Commands For more detailed commands, check out the [Commands Documentation](commands.md)
+#### Additional Commands For more detailed commands, check out the [Commands Documentation](commands.md)
